@@ -19,11 +19,11 @@ function App() {
     return newTodos
   }
 
-  function addTodo(todo) {
-    console.log(todo)
-      const {target : {value}} = todo
-      setTodos(value)
-      return {value, addTodo}
+  function addTodo(todo) {        // AddTodo.js 에서 참조된 함수정의부.
+    console.log(todos)// todos는 배열타입이다. 어떻게 todo를 집어넣냐. todo는 객체인데
+    const {target : {value}} = todo   
+    setTodos(value)
+    return {value, addTodo}
   }
 
   const {colorMode, toggleColorMode} = useColorMode();
