@@ -27,7 +27,7 @@ const AddTodo = ({addTodo}) => { //AddTodo는 'Todo' 추가해주는 함수 addT
       body: content         // input에 있던 문자열 대입
     };
     addTodo(todo);          // 이게 App.js에 정의된 addTodo함수 호출
-    console.log(todo)
+    //console.log(todo)
   }
   
   return (
