@@ -5,6 +5,7 @@ import AddTodo from './components/AddTodo';
 import { useState, useEffect } from 'react';
 
 function App() {
+  //console.log('안녕')
   const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem('todos')) || []);
 
   useEffect(() => {
@@ -15,9 +16,14 @@ function App() {
       return todo.id !== id;
     });
 
+    return newTodos
   }
 
   function addTodo(todo) {
+    console.log(todo)
+      const {target : {value}} = todo
+      setTodos(value)
+      return {value, addTodo}
   }
 
   const {colorMode, toggleColorMode} = useColorMode();
