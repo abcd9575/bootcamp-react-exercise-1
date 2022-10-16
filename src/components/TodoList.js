@@ -3,7 +3,8 @@ import { VStack, StackDivider, HStack, Text, Spacer, IconButton, Badge } from '@
 import { FaTrash } from "react-icons/fa";
 
 const TodoList = ({todos, deleteTodo}) => {
-  if(todos.length) {
+  
+  if(!todos.length) {
     return(
       <Badge colorScheme='cyan' p='4' borderRadius='lg'>
         No Todos, yay!!!
