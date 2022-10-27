@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { HStack, Input, Button, useToast } from '@chakra-ui/react';
 import { nanoid } from 'nanoid';
 
-const AddTodo = ({addTodo}) => { //AddTodo는 'Todo' 추가해주는 함수 addTodo라는 객체를 param으로 받는다.
+const AddTodo = ({addTodo}) => { //AddTodo는 'Todo' 추가해주는 함수, addTodo라는 객체를 param으로 받는다(x). // 갓기훈풀이 아래 3줄
+// const AddTodo = (params) => {       // App.js에서 <AddTodo addTodo={addTodo} />
+//   const addTodo = params.addTodo //JS
 
   const [content, setContent] = useState(''); // useState는 return 값이 배열인데 [값, 함수]로 반환. '함수'인 setContent는 'content'의 값을 변경하기 위함
   const toast = useToast();   // content가 '' 값 이면 오류 뿌려주는거.
@@ -26,7 +28,7 @@ const AddTodo = ({addTodo}) => { //AddTodo는 'Todo' 추가해주는 함수 addT
       id: nanoid(),         // id 랜덤으로 뿌려주는함수인듯
       body: content         // input에 있던 문자열 대입
     };
-    addTodo(todo);          // 이게 App.js에 정의된 addTodo함수 호출
+    addTodo(todo);          // 이게 App.js에 정의된 addTodo함수 호출 // 아 여따 써놨네 ㅡㅡ 
     //console.log(todo)
   }
   

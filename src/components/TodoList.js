@@ -2,8 +2,12 @@ import React from 'react';
 import { VStack, StackDivider, HStack, Text, Spacer, IconButton, Badge } from '@chakra-ui/react';
 import { FaTrash } from "react-icons/fa";
 
-const TodoList = ({todos, deleteTodo}) => {
-  
+const TodoList = ({todos, deleteTodo}) => { // 이 두 인자값은 app.js의 별표 안에 있는 attribute값 <TodoList **todos**={todos} ***deleteTodo***={deleteTodo} />
+// const TodoList = ({todos, deleteTodo} = a) => {
+  // const TodoList = (a) => {
+  // const todos = a.todos;
+  // const deleteTodo = a.deleteTodo;
+
   if(!todos.length) {
     return(
       <Badge colorScheme='cyan' p='4' borderRadius='lg'>
