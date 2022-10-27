@@ -61,13 +61,17 @@ function App() {
     
   }, [todos]);
 
-  function deleteTodo(id) {
-    const newTodos = todos.sort((todo) => {
-      return todo.id !== id;
-    });
-    setTodos( () => [...newTodos, id] )
+  function deleteTodo(id) {    
+    // filter함수는 배열에만쓸수있는 함수중 하나. 그리고 map(). map()은 .select (a => a.어쩌구) // filter()은 .where(a=>a.어쩌구)와 같다.
+    // const newTodos = todos.filter((todo) => {  
+    //   return todo.id !== id;
+    // });
+    // const newTodos = todos.filter(todo => todo.id !== id);
+    const newTodos = todos.Where(todo => todo.id !== id);
+    // setTodos( newTodos )
+    setTodos( [...newTodos] )
   }
-  useEffect( () => console.log(todos), [todos] ) // 
+  // useEffect( () => console.log(todos), [todos] ) // 
 
 
   function addTodo(todo) {        // AddTodo.js 에서 참조된 함수정의부.

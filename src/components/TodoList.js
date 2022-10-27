@@ -22,7 +22,7 @@ const TodoList = ({todos, deleteTodo}) => { // 이 두 인자값은 app.js의 �
         <HStack key={todo.id}>
           <Text>{todo.body}</Text>
           <Spacer />
-          <IconButton icon={<FaTrash />} isRound='true' onClick={() => deleteTodo(todo.id)} />
+          <IconButton icon={<FaTrash />} isRound='true' onClick={() => deleteTodo(todo.id) } />
         </HStack>
       ))}
     </VStack>

@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 
+Array.prototype.Select = Array.prototype.map
+Array.prototype.Where = Array.prototype.filter
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(  // 일단 여기서 리엑트 처음 시작하는 곳. 렌더링 뿌려주는곳이잖아. 다음 어디야? 
   <React.StrictMode>

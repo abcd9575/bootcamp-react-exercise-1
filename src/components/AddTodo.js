@@ -30,6 +30,7 @@ const AddTodo = ({addTodo}) => { //AddTodo는 'Todo' 추가해주는 함수, add
     };
     addTodo(todo);          // 이게 App.js에 정의된 addTodo함수 호출 // 아 여따 써놨네 ㅡㅡ 
     //console.log(todo)
+    setContent('')
   }
   
   return (
