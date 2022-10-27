@@ -3,6 +3,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
 import { useState, useEffect } from 'react';
+import { sortByTreeOrder } from 'framer-motion/types/render/utils/animation';
 
 // const a = {
 //     "key": 'value',
@@ -66,8 +67,11 @@ function App() {
     // const newTodos = todos.filter((todo) => {  
     //   return todo.id !== id;
     // });
-    // const newTodos = todos.filter(todo => todo.id !== id);
-    const newTodos = todos.Where(todo => todo.id !== id);
+    todos.sort( (a,b) => a - b);
+    todos.sort( (a,b) => b - a);
+
+    const newTodos = todos.filter(todo => todo.id !== id); // 원래코드
+    //const newTodos = todos.Where(todo => todo.id !== id);
     // setTodos( newTodos )
     setTodos( [...newTodos] )
   }
